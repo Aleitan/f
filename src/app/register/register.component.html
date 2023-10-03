@@ -1,0 +1,43 @@
+<div class="navbar bg-dark navbar-dark">
+    <div class="container-fluid">
+        <span class="navbar-brand">
+            <i class="bi bi-chat-dots-fill">
+                &nbsp;Foro dudas ITSCH
+            </i>
+        </span>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <div class="card mt-3">
+                <div class="card-header">Registro de usuario {{email}}</div>
+                <div class="card-body">
+                    <div class="input-group">
+                        <span class="input-group-text">
+                            <i class="bi bi-envelope-at-fill"></i>
+                        </span>
+                        <input type="email" class="form-control" placeholder="Correo" [(ngModel)]="email">
+                    </div>
+                    <div class="input-group mt-3">
+                        <span class="input-group-text">
+                            <i class="bi bi-key-fill"></i>
+                        </span>
+                        <input type="password" class="form-control" placeholder="Contraseña" [(ngModel)]="pass">
+                    </div>
+                    <div class="alert alert-danger" role="alert" *ngIf="showError">
+                       Skill issue
+                    </div>
+                </div>
+                <div class="card-footer text-end">
+                    <button class="btn btn-primary" (click)="registro()" [disabled]="showLoading">
+                        <div class="spinner-border spinner-border-sm" *ngIf="showLoading"></div>
+                        Entrar
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
